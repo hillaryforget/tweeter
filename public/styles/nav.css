@@ -5,11 +5,18 @@
   height: 120px;
   top: 0;
   width: 100%;
-  padding: 1.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
   background-color: #4056A1;
   color: #FFFFFF;
 }
 
 .navBar span {
   font-family: bungee;
+  font-size: 40px;
+  align-self: center;
+}
+
+.navBar div {
+align-self: center;
 }

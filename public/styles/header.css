@@ -1,10 +1,10 @@
 .header {
-  height: 400px;
-  width: 100%;
-  padding: top 120px;
+  height: 520px;
+  padding-top: 120px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #9190c2;
-  background-image: url(http://www.transparenttextures.com/patterns/asfalt-light.png);;
+  background-color: #9da9c2;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
