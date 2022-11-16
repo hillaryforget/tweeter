@@ -1,5 +1,6 @@
 .navBar {
   display: flex;
+  justify-content: space-between;
   width: 100%;
   height: 120px;
   background-color: #4056A1;
@@ -8,5 +9,5 @@
 }
 
 .navBar span {
-  font-family: Bungee;
+  font-family: bungee;
 }
