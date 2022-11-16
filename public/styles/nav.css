@@ -1,11 +1,13 @@
 .navBar {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  position: fixed;
   height: 120px;
+  top: 0;
+  width: 100%;
+  padding: 1.5em;
   background-color: #4056A1;
   color: #FFFFFF;
-  padding: 1.5em;
 }
 
 .navBar span {
