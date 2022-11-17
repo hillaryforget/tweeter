@@ -57,11 +57,20 @@
   </header>
 
     <!-- Page-specific (main) content here -->
-    <main>
-    <div>
-      <h1>This is to test the main container</h1>
-      <p>I hope it works</p>
-    </div>
+    <main class="container">
+
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form>
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      
   </main>
   </body>
 </html>
