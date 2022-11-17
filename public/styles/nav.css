@@ -12,11 +12,16 @@
 }
 
 .navBar span {
-  font-family: bungee;
+  font-family: bungee, sans-serif;
   font-size: 40px;
   align-self: center;
 }
 
 .navBar div {
 align-self: center;
+}
+
+.navBar i {
+  display: flex;
+  justify-content: center;
 }
