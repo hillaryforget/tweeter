@@ -51,3 +51,7 @@ justify-content: right;
 font-weight: 400;
 font-family: bungee, sans-serif; 
 }
+
+.text-red {
+  color: red;
+}
