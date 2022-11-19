@@ -1,7 +1,6 @@
 .new-tweet {
   display: flex;
   justify-content: space-between;
-  height: 150px;
   width: 100%;
   margin-bottom: 3rem;
   padding-left: 1.5em;
@@ -34,6 +33,12 @@
   margin-bottom: 0.5rem;
   padding: 0.5rem;
   height: 150px;
+}
+
+.counter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .new-tweet button {
