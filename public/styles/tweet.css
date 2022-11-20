@@ -1,10 +1,10 @@
-.tweet-container {
- width:100%;
- padding-left: 1.5rem;
- padding-right: 1.5rem;
+#tweets-container {
+  width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
-.tweet-container article {
+#tweets-container article {
   border-style: solid;
   border-color: #545149;
   border-width: 3px;
@@ -14,7 +14,7 @@
   flex-direction: column;
 }
 
-.tweet-container header {
+#tweets-container header {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -22,40 +22,40 @@
   align-items: center;
 }
 
-.tweet-container header span.tweet-username {
+#tweets-container header span.tweet-username {
   margin-right: auto;
   margin-left: 1rem;
 }
 
-.tweet-container header a {
-  color:#C5CBE4;
+#tweets-container header a {
+  color: #c5cbe4;
 }
 
-.tweet-container header + div > p {
+#tweets-container header + div > p {
   padding: 30px 0;
   margin: 0;
   margin-bottom: 12px;
   border-bottom: 3px solid #545149;
 }
 
-.tweet-container footer {
-  display:flex;
+#tweets-container footer {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size:1rem;
+  font-size: 1rem;
 }
 
-.tweet-container footer nav {
+#tweets-container footer nav {
   display: flex;
   align-items: center;
 }
 
-.tweet-container footer button {
-  border:none;
-  color:#4155A0;
+#tweets-container footer button {
+  border: none;
+  color: #4155a0;
 }
 
-.tweet-container footer button:hover,
-.tweet-container footer button:focus {
-  color: #BBB;
+#tweets-container footer button:hover,
+#tweets-container footer button:focus {
+  color: #bbb;
 }

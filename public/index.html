@@ -34,7 +34,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/client.js" async></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
@@ -74,37 +74,7 @@
       </section>
       
       <!-- Tweet container -->
-      <div class="tweet-container">
-        <article>
-          <header>
-            <div>
-              <img src="https://i.imgur.com/lRUnDgU.png">
-            </div>
-            <span class="tweet-username">Rhoda Jacobs</span>
-            <span><a href="">@MrsJacobs</a></span>
-          </header>
-  
-          <div>
-            <p>Hello world!</p>
-          </div>
-          <footer>
-            <time>10 days ago</time>
-            <nav>
-              <button type="button">
-                <span class="sr-only">Flag</span>
-                <i class="fa-solid fa-flag"></i>
-              </button>
-              <button type="button" class="retweet">
-                <span class="sr-only">Retweet</span>
-                <i class="fa-solid fa-retweet"></i>
-              </button>
-              <button type="button" class="like">
-                <span class="sr-only">Like</span>
-                <i class="fa-solid fa-heart"></i>
-              </button>
-            </nav>
-          </footer>
-        </article>
+      <div id="tweets-container">
       </div>
   </main>
   </body>
