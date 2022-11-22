@@ -30,7 +30,7 @@ const data = [
   },
 ];
 
-const renderTweets = function(tweets) {
+const renderTweets = function (tweets) {
   // loops through tweets
   const htmlTweets = tweets.map((tweet) => {
     // calls createTweetElement for each tweet
@@ -40,7 +40,7 @@ const renderTweets = function(tweets) {
   $("#tweets-container").append(htmlTweets);
 };
 
-const createTweetElement = function(tweet) {
+const createTweetElement = function (tweet) {
   const { user, content, created_at } = tweet;
 
   const $tweet = $(`<article>
@@ -79,3 +79,20 @@ const createTweetElement = function(tweet) {
 };
 
 renderTweets(data);
+
+// jQuery needs to be run inside .ready
+$(document).ready(function() {
+  // Ajax request to submit the create tweet form
+  $("#new-tweet-form").submit(function(event) {
+    // Stops default behaviour of submitting and reloading the page
+    event.preventDefault();
+    // Turns a set of form data into a query string. This serialized data should be sent to the server in the data field of the AJAX POST request
+    const tweetData = $(this).serialize();
+    $.ajax({
+      url: "tweets",
+      type: "POST",
+      data: tweetData,
+      contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+    });
+  });
+});
