@@ -3,6 +3,7 @@
 const userHelper    = require("../lib/util/user-helper");
 
 const express       = require('express');
+const e = require("express");
 const tweetsRoutes  = express.Router();
 
 module.exports = function(DataHelpers) {
@@ -18,6 +19,11 @@ module.exports = function(DataHelpers) {
   });
 
   tweetsRoutes.post("/", function(req, res) {
+
+    //WHENEVER YOURE TAKING IN INPUTS, MAKE SURE YOU SANITIZE UP FRONT
+    //e.g. inputs = sanitize(req.body) or something
+  
+
     if (!req.body.text) {
       res.status(400).json({ error: 'invalid request: no data in POST body'});
       return;

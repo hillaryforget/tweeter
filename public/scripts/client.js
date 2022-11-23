@@ -4,6 +4,13 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// Escape function preventing XSS attack
+const escape = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const renderTweets = function(tweets) {
   // Loops through tweets
   const htmlTweets = tweets.map((tweet) => {
@@ -27,7 +34,7 @@ const createTweetElement = function(tweet) {
     </header>
 
     <div>
-      <p>${content.text}</p>
+      <p>${escape(content.text)}</p>
     </div>
     <footer>
       <time>${timeago.format(created_at, 'en_US')}</time>
@@ -53,7 +60,7 @@ const createTweetElement = function(tweet) {
 };
 
 // jQuery needs to be run inside .ready
-$(document).ready(function () {
+$(document).ready(function() {
   // Load tweet with GET
   const loadtweets = () => {
     $.ajax("/tweets", { method: "GET" }).then((tweets) => {
@@ -92,3 +99,4 @@ $(document).ready(function () {
     }
   });
 });
+
