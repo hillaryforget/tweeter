@@ -4,43 +4,17 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1461116232227,
-  },
-  {
-    user: {
-      name: "Descartes",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@rd",
-    },
-    content: {
-      text: "Je pense , donc je suis",
-    },
-    created_at: 1461113959088,
-  },
-];
-
-const renderTweets = function (tweets) {
-  // loops through tweets
+const renderTweets = function(tweets) {
+  // Loops through tweets
   const htmlTweets = tweets.map((tweet) => {
-    // calls createTweetElement for each tweet
+    // Calls createTweetElement for each tweet
     return createTweetElement(tweet);
   });
-  // takes return value and appends it to the tweets container
+  // Takes return value and appends it to the tweets container
   $("#tweets-container").append(htmlTweets);
 };
 
-const createTweetElement = function (tweet) {
+const createTweetElement = function(tweet) {
   const { user, content, created_at } = tweet;
 
   const $tweet = $(`<article>
@@ -56,7 +30,7 @@ const createTweetElement = function (tweet) {
       <p>${content.text}</p>
     </div>
     <footer>
-      <time>${created_at}</time>
+      <time>${timeago.format(created_at, 'en_US')}</time>
       <nav>
         <button type="button">
           <span class="sr-only">Flag</span>
@@ -78,21 +52,43 @@ const createTweetElement = function (tweet) {
   return $tweet;
 };
 
-renderTweets(data);
-
 // jQuery needs to be run inside .ready
-$(document).ready(function() {
+$(document).ready(function () {
+  // Load tweet with GET
+  const loadtweets = () => {
+    $.ajax("/tweets", { method: "GET" }).then((tweets) => {
+      renderTweets(tweets);
+    });
+  };
+
+  loadtweets();
   // Ajax request to submit the create tweet form
   $("#new-tweet-form").submit(function(event) {
     // Stops default behaviour of submitting and reloading the page
     event.preventDefault();
-    // Turns a set of form data into a query string. This serialized data should be sent to the server in the data field of the AJAX POST request
-    const tweetData = $(this).serialize();
-    $.ajax({
-      url: "tweets",
-      type: "POST",
-      data: tweetData,
-      contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-    });
+
+    const maxCharCount = 140;
+    const charLength = $(this).find("#tweet-text").val().length;
+
+    if (!charLength) {
+      return alert("Please write Tweet");
+    } else if (charLength > maxCharCount) {
+      return alert("Over character limit");
+    } else {
+      // Turns a set of form data into a query string. This serialized data should be sent to the server in the data field of the AJAX POST request
+      const tweetData = $(this).serialize();
+      $.ajax({
+        url: "tweets",
+        type: "POST",
+        data: tweetData,
+        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+        success: function(response) {
+          renderTweets([response]);
+        },
+        error: function() {
+          alert("Something went wrong! Failed to tweet.");
+        }
+      });
+    }
   });
 });
