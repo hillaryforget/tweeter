@@ -1,6 +1,4 @@
 .new-tweet {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
   margin-bottom: 3rem;
   padding-left: 1.5em;
@@ -59,4 +57,12 @@ font-family: bungee, sans-serif;
 
 .text-red {
   color: red;
+}
+
+.new-tweet .error-message{ 
+  margin-top: 1rem;
+  width:100%;
+  padding:1rem;
+  border-left:2px solid red;
+  background-color: rgb(255, 224, 224);
 }

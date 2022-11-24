@@ -69,6 +69,7 @@ $(document).ready(function() {
   };
 
   loadtweets();
+  $(".error-message").hide();
   // Ajax request to submit the create tweet form
   $("#new-tweet-form").submit(function(event) {
     // Stops default behaviour of submitting and reloading the page
@@ -77,10 +78,15 @@ $(document).ready(function() {
     const maxCharCount = 140;
     const charLength = $(this).find("#tweet-text").val().length;
 
+    $(".error-message").slideUp();
     if (!charLength) {
-      return alert("Please write Tweet");
+      $(".error-message").slideDown();
+      $(".error-message").html("Please write Tweet");
+      return;
     } else if (charLength > maxCharCount) {
-      return alert("Over character limit");
+      $(".error-message").slideDown();
+      $(".error-message").html("Over character limit");
+      return;
     } else {
       // Turns a set of form data into a query string. This serialized data should be sent to the server in the data field of the AJAX POST request
       const tweetData = $(this).serialize();
@@ -93,7 +99,9 @@ $(document).ready(function() {
           renderTweets([response]);
         },
         error: function() {
-          alert("Something went wrong! Failed to tweet.");
+          $(".error-message").slideDown();
+          $(".error-message").html("Something went wrong!");
+          return;
         }
       });
     }
