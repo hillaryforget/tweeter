@@ -41,42 +41,57 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav class="navBar">
-      <span>tweeter</span>
+      <div class="wrapper ten">
+        <div>
+            <h3 class="bounce">
+                <span>T</span>
+                <span>W</span>
+                <span>E</span>
+                <span>E</span>
+                <span>T</span>
+                <span>E</span>
+                <span>R</span>
+            </h3>
+        </div>
+    </div>
       <div>
         <div><b>Write</b> a new tweet</div>
         <div><i class="fa-solid fa-angles-down"></i></div>
       </div>
     </nav>
 
-<!-- Name and Avatar -->
-    <header class="header">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <h2>Your Name</h2>
-      </div>
-  </header>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-
-      <section class="new-tweet">
-        <div class="error-message"></div>
-        <form id="new-tweet-form" method="POST" action="/tweets/">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text" placeholder="Write tweet here..."></textarea>
-          <div class="counter-container">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
+    <!-- Name and Avatar -->
+    <div class="wrapper">
+          <header class="header">
+            <div>
+                <img src="/images/profile-hex.png"> 
+            </div>
+            <br>
+            <div>
+                <h2>Your Name</h2>
+            </div>
+        </header>
       
-      <!-- Tweet container -->
-      <div id="tweets-container">
-      </div>
-  </main>
+          <!-- Page-specific (main) content here -->
+          <main class="container">
+      
+            <section class="new-tweet">
+              <div class="error-message"></div>
+              <form id="new-tweet-form" method="POST" action="/tweets/">
+                <label for="tweet-text">What are you humming about?</label>
+                <textarea name="text" id="tweet-text" placeholder="Write tweet here..."></textarea>
+                <div class="counter-container">
+                  <button type="submit">Tweet</button>
+                  <output name="counter" class="counter" for="tweet-text">140</output>
+                </div>
+              </form>
+            </section>
+            
+            <!-- Tweet container -->
+            <div id="tweets-container">
+            </div>
+        </main>
+
+    </div>
   </body>
 </html>

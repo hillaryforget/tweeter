@@ -1,6 +1,6 @@
 .header {
   height: 520px;
-  padding-top: 120px;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,4 +11,19 @@
 
 .header h2 {
   margin: auto;
+}
+
+.wrapper {
+  padding-top: 120px;
+}
+
+@media(min-width: 1024px) {
+  .wrapper {
+    display: flex;
+  }
+  
+  .wrapper > header,
+  .wrapper > main {
+    flex: 1;
+  }
 }
