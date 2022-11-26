@@ -81,7 +81,7 @@ $(document).ready(function() {
     $(".error-message").slideUp();
     if (!charLength) {
       $(".error-message").slideDown();
-      $(".error-message").html("Please write Tweet");
+      $(".error-message").html("Please write tweet");
       return;
     } else if (charLength > maxCharCount) {
       $(".error-message").slideDown();
@@ -107,4 +107,5 @@ $(document).ready(function() {
     }
   });
 });
+
 

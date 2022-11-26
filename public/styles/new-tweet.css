@@ -39,19 +39,11 @@
   align-items: center;
 }
 
-.new-tweet button {
-  background-color: #4056A1;
-  border: 0;
-  color: #FFFFFF;
-  font-family: bungee, sans-serif;
-  font-weight: 400;
-  padding: 0.2em 0.8rem 0.2rem;
-}
-
 .new-tweet .counter {
 display: flex;
 justify-content: right;
 font-weight: 400;
+font-size: 18px;
 font-family: bungee, sans-serif; 
 }
 
@@ -65,4 +57,28 @@ font-family: bungee, sans-serif;
   padding:1rem;
   border-left:2px solid red;
   background-color: rgb(255, 224, 224);
+}
+
+.new-tweet button {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-family: bungee, sans-serif;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4056A1;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 6px #999;
+}
+
+.new-tweet button:hover {background-color: #32478f}
+
+.new-tweet button:active {
+  background-color: #32478f;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
