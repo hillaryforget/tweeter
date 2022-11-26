@@ -13,7 +13,7 @@ const escape = function(str) {
 
 const renderTweets = function(tweets) {
   // Loops through tweets
-  const htmlTweets = tweets.map((tweet) => {
+  const htmlTweets = tweets.reverse().map((tweet) => { // Posts appear in chronological order
     // Calls createTweetElement for each tweet
     return createTweetElement(tweet);
   });
