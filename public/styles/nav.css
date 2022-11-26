@@ -78,3 +78,17 @@ align-self: center;
 .navBar .wrapper.ten {
   margin-top: -8rem;
 }
+
+@media(max-width: 1024px) {
+  .navBar {
+    background-color: #9CA9C2;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  }
+}
+
+@media(max-width: 1024px) {
+  .wrapper.ten {
+    background-color: #9CA9C2; 
+    -webkit-box-reflect: linear-gradient(transparent, #9CA9C2);
+  }
+}
