@@ -12,13 +12,13 @@ const escape = function(str) {
 };
 
 const renderTweets = function(tweets) {
-  // Loops through tweets
-  const htmlTweets = tweets.reverse().map((tweet) => { // Posts appear in chronological order
+  // Posts appear in reverse chronological order
+  const htmlTweets = tweets.reverse().map((tweet) => {
     // Calls createTweetElement for each tweet
     return createTweetElement(tweet);
   });
   // Takes return value and appends it to the tweets container
-  $("#tweets-container").append(htmlTweets);
+  $("#tweets-container").prepend(htmlTweets);
 };
 
 const createTweetElement = function(tweet) {
@@ -96,6 +96,7 @@ $(document).ready(function() {
         data: tweetData,
         contentType: "application/x-www-form-urlencoded; charset=UTF-8",
         success: function(response) {
+          $("#new-tweet-form textarea").val("");
           renderTweets([response]);
         },
         error: function() {
