@@ -97,6 +97,7 @@ $(document).ready(function() {
         contentType: "application/x-www-form-urlencoded; charset=UTF-8",
         success: function(response) {
           $("#new-tweet-form textarea").val("");
+          $(".counter").val("140");
           renderTweets([response]);
         },
         error: function() {

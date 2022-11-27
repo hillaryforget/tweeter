@@ -73,6 +73,14 @@ align-self: center;
 .navBar i {
   display: flex;
   justify-content: center;
+  margin-top: 1rem;
+}
+
+.navBar i:hover {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  animation: bounce 1s infinite;;
 }
 
 .navBar .wrapper.ten {
