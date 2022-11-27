@@ -15,6 +15,13 @@
 
 .wrapper {
   padding-top: 120px;
+  padding-left: 1.5em;
+  padding-right:1.5em;
+}
+
+.call-to-action {
+  padding-left: 1.5em;
+  padding-right:1.5em;
 }
 
 @media(min-width: 1024px) {
@@ -22,7 +29,7 @@
     display: flex;
   }
   
-  .wrapper > header,
+  .wrapper > .header-container,
   .wrapper > main {
     flex: 1;
   }

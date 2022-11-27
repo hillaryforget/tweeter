@@ -20,8 +20,17 @@
     />
 
     <!-- Font awesome (for icon) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://kit.fontawesome.com/568b09c587.js" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://kit.fontawesome.com/568b09c587.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- App CSS (links to local modules) -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -32,10 +41,18 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+      integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js" async></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script
+      type="text/javascript"
+      src="/scripts/composer-char-counter.js"
+    ></script>
   </head>
 
   <body>
@@ -43,18 +60,18 @@
     <nav class="navBar">
       <div class="wrapper ten">
         <div>
-            <h3 class="bounce">
-                <span>T</span>
-                <span>W</span>
-                <span>E</span>
-                <span>E</span>
-                <span>T</span>
-                <span>E</span>
-                <span>R</span>
-            </h3>
+          <h3 class="bounce">
+            <span>T</span>
+            <span>W</span>
+            <span>E</span>
+            <span>E</span>
+            <span>T</span>
+            <span>E</span>
+            <span>R</span>
+          </h3>
         </div>
-    </div>
-      <div>
+      </div>
+      <div class="call-to-action">
         <div><b>Write</b> a new tweet</div>
         <div><i class="fa-solid fa-kiwi-bird"></i></div>
       </div>
@@ -62,36 +79,48 @@
 
     <!-- Name and Avatar -->
     <div class="wrapper">
-          <header class="header">
-            <div>
-                <img src="/images/profile-hex.png"> 
-            </div>
-            <br>
-            <div>
-                <h2>Hillary Forget</h2>
-            </div>
+      <div class="header-container">
+        <header class="header">
+          <div>
+            <img src="/images/profile-hex.png" />
+          </div>
+          <br />
+          <div>
+            <h2>Hillary Forget</h2>
+          </div>
         </header>
-      
-          <!-- Page-specific (main) content here -->
-          <main class="container">
-      
-            <section class="new-tweet">
-              <div class="error-message"></div>
-              <form id="new-tweet-form" method="POST" action="/tweets/">
-                <label for="tweet-text">What are you humming about?</label>
-                <textarea name="text" id="tweet-text" placeholder="Write tweet here..."></textarea>
-                <div class="counter-container">
-                  <button type="submit">Tweet</button>
-                  <output name="counter" class="counter" for="tweet-text">140</output>
-                </div>
-              </form>
-            </section>
-            
-            <!-- Tweet container -->
-            <div id="tweets-container">
-            </div>
-        </main>
       </div>
-      <footer>&copy; Tweeter Project by <a target="_blank" href="https://github.com/hillaryforget/tweeter">@hillaryforget</a> | Lighthouse Labs</footer>
+
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <div class="error-message"></div>
+          <form id="new-tweet-form" method="POST" action="/tweets/">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea
+              name="text"
+              id="tweet-text"
+              placeholder="Write tweet here..."
+            ></textarea>
+            <div class="counter-container">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text"
+                >140</output
+              >
+            </div>
+          </form>
+        </section>
+
+        <!-- Tweet container -->
+        <div id="tweets-container"></div>
+      </main>
+    </div>
+    <footer>
+      &copy; Tweeter Project by
+      <a target="_blank" href="https://github.com/hillaryforget/tweeter"
+        >@hillaryforget</a
+      >
+      | Lighthouse Labs
+    </footer>
   </body>
 </html>

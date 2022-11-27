@@ -1,10 +1,16 @@
 .new-tweet {
   width: 100%;
   margin-bottom: 3rem;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  
   background-color: #f4f1ec;
   color: #545149;
+}
+
+@media(min-width:1024px) {
+  #tweets-container,
+  .new-tweet {
+    padding-left:1.5em;
+  }
 }
 
 .new-tweet form { 

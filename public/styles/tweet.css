@@ -1,7 +1,5 @@
 #tweets-container {
   width: 100%;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 
 #tweets-container article {
@@ -9,8 +7,8 @@
   border-color: #545149;
   border-width: 3px;
   width: 100%;
-  padding: 1.5rem;
-  margin-bottom: 1rem;
+  padding: 1.5em;
+  margin-bottom: 1.5em;
   display: flex;
   flex-direction: column;
 }
